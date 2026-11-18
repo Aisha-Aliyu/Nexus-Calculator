@@ -4,8 +4,8 @@
   "description": "A cinematic calculator with voice input, expression parsing, and sci-fi visuals",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a1f",
-  "theme_color": "#00f3ff",
+  "background_color": "#070b12",
+  "theme_color": "#070b12",
   "orientation": "portrait",
   "icons": [
     {

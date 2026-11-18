@@ -515,7 +515,8 @@
     btn.addEventListener('click', () => handleNumber(btn.dataset.number));
   });
   
-    // Operator buttons
+  // Operator buttons
+  document.querySelectorAll('[data-operator]').forEach(btn => {
     btn.addEventListener('click', () => handleOperator(btn.dataset.operator));
   });
   
@@ -643,59 +644,8 @@
         });
       });
     }
-    
-    // Add ripple effect
-    document.querySelectorAll('button').forEach(btn => {
-      btn.addEventListener('mousedown', createRipple);
-    });
   }
-  
-  // Ripple effect
-  function createRipple(e) {
-    const button = e.currentTarget;
-    const ripple = document.createElement('span');
-    const rect = button.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    const x = e.clientX - rect.left - size / 2;
-    const y = e.clientY - rect.top - size / 2;
-    
-    ripple.style.width = ripple.style.height = size + 'px';
-    ripple.style.left = x + 'px';
-    ripple.style.top = y + 'px';
-    ripple.className = 'ripple';
-    
-    button.appendChild(ripple);
-    
-    setTimeout(() => {
-      ripple.remove();
-    }, 600);
-  }
-  
-  // Add ripple styles dynamically
-  const style = document.createElement('style');
-  style.textContent = `
-    .ripple {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      transform: scale(0);
-      animation: ripple 0.6s ease-out;
-      pointer-events: none;
-    }
-    
-    @keyframes ripple {
-      to {
-        transform: scale(4);
-        opacity: 0;
-      }
-    }
-    
-    button {
-      position: relative;
-      overflow: hidden;
-    }
-  `;
-  document.head.appendChild(style);
   
   // Start the app
   init();
+})();
