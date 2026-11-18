@@ -1,42 +1,30 @@
-# Nexus Calculator - A Sci-Fi Themed Calculator 🚀
+# Nexus Calculator
 
-Experience mathematics like never before with this cinematic, sci-fi inspired calculator featuring voice input, expression parsing, and stunning visual effects.
+A calculator with a sci-fi control panel look. It reads whole expressions, takes voice input, and installs as a PWA that works offline.
 
-## ✨ Unique Features
+Live demo: https://nexus-calculator-nine.vercel.app
 
-### 🎤 Voice Input
-- Say "five plus three times two" and watch it calculate
-- Natural language processing for math expressions
-- Supports "squared", "cubed", "to the power of"
+## Features
 
-### 🧮 Expression Parsing
-- Type `5 + 3 * 2` and get `11` (respects operator precedence)
-- Parentheses support: `(5 + 3) * 2`
-- Constants: π, e, φ (golden ratio), c (speed of light)
+- Type a full expression like `5 + 3 * 2` and get 11. It follows operator precedence and handles brackets, as in `(5 + 3) * 2`.
+- Voice input: say "five plus three times two". It also understands "squared", "cubed" and "to the power of".
+- Constants: π, e, φ (the golden ratio), c (the speed of light) and h (Planck's constant).
+- Memory keys (MC, MR, M+, M-) and a history you can tap to reuse an earlier result.
+- Unit converter for length, weight and temperature.
+- Percentages, keyboard support (Enter to calculate, Esc to clear), and a short vibration on each key where the phone supports it.
 
-### 📊 Advanced Features
-- **Memory functions** (M+, M-, MR, MC)
-- **Calculation history** - tap to reuse previous results
-- **Unit converter** - length, weight, temperature
-- **Percentage calculations** with proper handling
+## Design
 
-### 🎨 Sci-Fi UI
-- Neon glow effects with dynamic colors
-- Floating calculator card animation
-- Particle background with stars
-- Ripple effects on button press
-- Haptic feedback (on supported devices)
+The look is a dark navy panel with a single blue accent, thin borders and Share Tech Mono for all the text.
 
-### 📱 PWA Ready
-- Install as native app
-- Works offline
-- Fast and responsive
+## Run it locally
 
-## 🚀 Getting Started
+It's plain HTML, CSS and JavaScript, so any static server works:
 
-### Installation
-
-1. Clone the repository
 ```bash
 git clone https://github.com/Aisha-Aliyu/Nexus-Calculator.git
 cd Nexus-Calculator
+npx serve
+```
+
+Voice input uses the browser's Web Speech API, which works best in Chrome and Edge.
