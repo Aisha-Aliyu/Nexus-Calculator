@@ -1,6 +1,7 @@
 // sw.js - Service Worker for offline caching
 
-const CACHE_NAME = 'nexus-calculator-v1';
+// New name so returning visitors drop the old cached files
+const CACHE_NAME = 'nexus-calculator-v2';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -28,6 +29,7 @@ self.addEventListener('install', event => {
         console.log('Opened cache');
         return cache.addAll(urlsToCache);
       })
+      .then(() => self.skipWaiting())
   );
 });
 
@@ -56,6 +58,6 @@ self.addEventListener('activate', event => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim())
   );
 });
